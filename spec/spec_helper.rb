@@ -1,3 +1,8 @@
 require 'rspec'
-require_relative '../menu.rb'
-require_relative '../restaurant.rb'
+require_relative '../loader'
+require_relative 'helpers'
+
+RSpec.configure do |config|
+  config.include Helpers
+end
+
