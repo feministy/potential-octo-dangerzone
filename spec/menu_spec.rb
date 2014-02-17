@@ -28,5 +28,11 @@ describe 'Menu' do
       expect(@menu.total).to be(21.8)
     end
   end
+
+  context '#dishes' do
+    it 'sorts from highest to lowest' do
+      expect(@menu.dishes[0].price).to be(5.8)
+    end
+  end
 end
 
