@@ -1,12 +1,12 @@
 require_relative 'spec_helper.rb'
 
 describe 'Menu' do
-  context '#initialize' do
-    before do
-      open_for_business
-      @menu = @diner.menu
-    end
+  before do
+    open_for_business
+    @menu = @diner.menu
+  end
 
+  context '#initialize' do
     it 'has #dishes' do
       expect(@menu.dishes).to be_true
     end
@@ -14,6 +14,18 @@ describe 'Menu' do
     it 'has #dishes that are Dish objects' do
       dish = @menu.dishes.first
       expect(dish).to be_instance_of(Dish)
+    end
+  end
+
+  context '#number_of_items' do
+    it 'works' do
+      expect(@menu.number_of_items).to be(6)
+    end
+  end
+
+  context '#total' do
+    it 'works' do
+      expect(@menu.total).to be(21.8)
     end
   end
 end

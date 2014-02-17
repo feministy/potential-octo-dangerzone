@@ -10,4 +10,12 @@ class Menu
       @dishes << Dish.new(item, price)
     end
   end
+
+  def number_of_items
+    @dishes.length
+  end
+
+  def total
+    @dishes.map(&:price).reduce(&:+)
+  end
 end
