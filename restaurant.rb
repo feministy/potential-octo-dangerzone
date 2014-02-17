@@ -35,7 +35,7 @@ class Restaurant
   end
 
   def set_minimum_order
-    if @minimum_order
+    if !@minimum_order
       @minimum_order = @inventory.select { |i| i.length == 1 }.flatten.first
       @minimum_order = @minimum_order.gsub!('$', '').to_f
     end

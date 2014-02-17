@@ -151,4 +151,17 @@ describe 'Restaurant' do
       end
     end
   end
+
+  context '#unprocessed?' do
+    before do
+      @diner = Restaurant.new(filename)
+    end
+
+    it 'works for arrays' do
+      result = @diner.send(:unprocessed?, [1, 2])
+      expect(result).to be_false
+    end
+    it 'works for nil objects'
+    it 'raises an error for anything else'
+  end
 end
