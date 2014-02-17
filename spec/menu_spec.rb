@@ -34,5 +34,11 @@ describe 'Menu' do
       expect(@menu.dishes[0].price).to be(5.8)
     end
   end
+
+  context '#prices' do
+    it 'grabs all prices' do
+      expect(@menu.prices[0]).to be(5.8)
+    end
+  end
 end
 
