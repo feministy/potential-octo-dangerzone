@@ -105,8 +105,13 @@ describe 'Restaurant' do
       expect(original).to equal(duplicate)
     end
 
-    it 'should create @menu'
-    it 'should create @menu as an instance of Menu'
+    it 'should create @menu' do
+      expect(@diner.menu).to be_true
+    end
+
+    it 'should create @menu as an instance of Menu' do
+      expect(@diner.menu).to be_instance_of(Menu)
+    end
 
   end
 end
