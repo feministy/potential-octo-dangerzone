@@ -112,6 +112,43 @@ describe 'Restaurant' do
     it 'should create @menu as an instance of Menu' do
       expect(@diner.menu).to be_instance_of(Menu)
     end
+  end
 
+  context '#set_minimum_order' do
+    before do
+      @diner = Restaurant.new(filename)
+      @diner.process_inventory
+      @diner.open_for_business
+    end
+
+    it 'should create @minimum_order' do
+      expect(@diner.minimum_order).to be_true
+    end
+
+    it 'should only process once' do
+      original = @diner.minimum_order
+      @diner.set_minimum_order
+      duplicate = @diner.minimum_order
+      expect(original).to eql(duplicate)
+    end
+
+    describe 'with currencies' do
+      before do
+        @diner = Restaurant.new(filename)
+        @diner.process_inventory
+      end
+
+      it 'works with US currency' do
+        @diner.instance_variable_set(:@inventory, [['$12.29']])
+        @diner.open_for_business
+        expect(@diner.minimum_order).to eq(12.29)
+      end
+
+      it 'does not work with other currencies' do
+        @diner.instance_variable_set(:@inventory, [['£12.29']])
+        @diner.open_for_business
+        expect(@diner.minimum_order).to eq(0.0)
+      end
+    end
   end
 end
