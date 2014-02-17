@@ -145,6 +145,13 @@ describe 'Restaurant' do
     end
   end
 
+  context '#order_options' do
+    before do
+      open_for_business
+      @diner.order_options
+    end
+  end
+
   context '#unprocessed?' do
     before do
       @diner = Restaurant.new(filename)

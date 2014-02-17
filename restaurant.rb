@@ -42,6 +42,11 @@ class Restaurant
     @minimum_order
   end
 
+  def order_options
+    order = Order.new(@minimum_order, @menu)
+    order.possibilities
+  end
+
   protected
   def unprocessed?(object)
     object.nil? || object.empty?
