@@ -18,4 +18,16 @@ module Helpers
   def first_item_line
     lines[1]
   end
+
+  def process_inventory
+    @diner = Restaurant.new(filename)
+    @diner.process_inventory
+    @diner
+  end
+
+  def open_for_business
+    process_inventory
+    @diner.open_for_business
+    @diner
+  end
 end

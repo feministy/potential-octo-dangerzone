@@ -31,8 +31,8 @@ describe 'Restaurant' do
 
   context '#process_inventory' do
     before do
-      @diner = Restaurant.new(filename)
-      @result = @diner.process_inventory
+      process_inventory
+      @result = @diner.instance_variable_get(:@inventory)
     end
 
     it 'returns an array' do
@@ -60,9 +60,7 @@ describe 'Restaurant' do
 
   context '#open_for_business' do
     before do
-      @diner = Restaurant.new(filename)
-      @diner.process_inventory
-      @diner.open_for_business
+      open_for_business
     end
 
     it 'sets @menu' do
@@ -93,9 +91,7 @@ describe 'Restaurant' do
 
   context '#create_menu_from_inventory' do
     before do
-      @diner = Restaurant.new(filename)
-      @diner.process_inventory
-      @diner.open_for_business
+      open_for_business
     end
 
     it 'should only process once' do
@@ -116,9 +112,7 @@ describe 'Restaurant' do
 
   context '#set_minimum_order' do
     before do
-      @diner = Restaurant.new(filename)
-      @diner.process_inventory
-      @diner.open_for_business
+      open_for_business
     end
 
     it 'should create @minimum_order' do
@@ -134,8 +128,7 @@ describe 'Restaurant' do
 
     describe 'with currencies' do
       before do
-        @diner = Restaurant.new(filename)
-        @diner.process_inventory
+        process_inventory
       end
 
       it 'works with US currency' do
