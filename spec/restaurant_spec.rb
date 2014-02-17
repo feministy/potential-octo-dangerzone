@@ -157,11 +157,23 @@ describe 'Restaurant' do
       @diner = Restaurant.new(filename)
     end
 
-    it 'works for arrays' do
+    it 'works for arrays with content' do
       result = @diner.send(:unprocessed?, [1, 2])
       expect(result).to be_false
     end
-    it 'works for nil objects'
-    it 'raises an error for anything else'
+
+    it 'works with empty arrays' do
+      result = @diner.send(:unprocessed?, [])
+      expect(result).to be_true
+    end
+
+    it 'works for nil objects' do
+      result = @diner.send(:unprocessed?, nil)
+      expect(result).to be_true
+    end
+
+    it 'raises an error for anything else' do
+      expect { @diner.send(:unprocessed?, 123) }.to raise_error
+    end
   end
 end
