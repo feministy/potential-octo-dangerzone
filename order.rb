@@ -7,6 +7,7 @@ class Order
   end
 
   def possibilities
-    # does something fancy to display all orders
+    prices = @menu.prices
+    prices
   end
 end
