@@ -1,6 +1,6 @@
 module Helpers
   def filename
-    File.expand_path('./lib/menu.txt')
+    File.expand_path('./spec/menu.txt')
   end
 
   def line_count
