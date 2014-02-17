@@ -1,6 +1,6 @@
 require_relative 'loader'
 
-class MenuItem
+class Dish
   attr_reader :item, :price
 
   def initialize(item, price)
