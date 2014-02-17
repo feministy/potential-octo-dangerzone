@@ -7,7 +7,7 @@ class Menu
     @dishes = []
 
     opts_hash.each do |item, price|
-      @dishes << MenuItem.new(item, price)
+      @dishes << Dish.new(item, price)
     end
   end
 end

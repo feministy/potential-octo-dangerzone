@@ -5,6 +5,10 @@ class Dish
 
   def initialize(item, price)
     @item = item
-    @price = price
+    @price = format_price(price)
+  end
+
+  def format_price(price)
+    @price =  price.gsub!('$', '').to_f
   end
 end
