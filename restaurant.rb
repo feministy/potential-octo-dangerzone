@@ -44,7 +44,7 @@ class Restaurant
 
   def order_options
     order = Order.new(@minimum_order, @menu)
-    order.possibilities
+    order.calculate_possibilities
   end
 
   protected
