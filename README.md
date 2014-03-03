@@ -6,7 +6,7 @@ Here at Taco Town, we only accept orders that challenge our brains and
 make us question our sanity by solving the knapsack problem. Just for
 fun, and because it gives us an excuse for slow order time.
 
-Taco Town is a DIY pop-up restaurant. To get started, you'll need:
+Taco Town is a DIY pop-up restaurant that you run from the command line. To get started, you'll need:
 
 * some sort of file, preferably comma separated, that contains
  - on the first line: your requested order total
@@ -18,25 +18,25 @@ Taco Town is a DIY pop-up restaurant. To get started, you'll need:
 2. Start up a new restaurant using the path to your menu file:
 
 ```ruby
-diner = Restaurant.new('path/to/file')
+$ diner = Restaurant.new('path/to/file')
 ```
 
 3. Process your restaurant's inventory:
 
 ```ruby
-diner.process_inventory
+$ diner.process_inventory
 ```
 
 4. Set up your menu and open your doors:
 
 ```ruby
-diner.open_for_business
+$ diner.open_for_business
 ```
 
 5. When you're ready to see all of your order options, run:
 
 ```ruby
-diner.order_options
+$ diner.order_options
 ```
 
 And voila! Enjoy your food.
@@ -54,13 +54,13 @@ and should be backwards compatible with any RSpec version that uses the
 First, if you don't have a recent version of RSpec:
 
 ```
-gem install rspec
+$ gem install rspec
 ```
 
 And then, I'm sorry this is so hard, run:
 
 ```
-rspec
+$ rspec
 ```
 
 (*giggles*)
